@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elizabeth Moore — Instructional Designer &amp; eLearning Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDF1EF;
+    --paper-alt:#E3E9E5;
+    --card:#F7F9F7;
+    --ink:#1A231F;
+    --ink-soft:#2F3E38;
+    --pine:#1F3D34;
+    --pine-deep:#152C25;
+    --amber:#D9822B;
+    --amber-soft:#F2C089;
+    --slate:#52677D;
+    --line:#C7D0C9;
+    --frame-shadow: 4px 4px 0 var(--pine);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:.02em; }
+  h1,h2,h3{ font-family:'Fraunces', serif; margin:0; color:var(--pine-deep); }
+  a{ color:inherit; }
+  img{max-width:100%; display:block;}
+
+  /* Background graph-paper texture */
+  .graph{
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 36px 36px;
+    background-position: -1px -1px;
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(237,241,239,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--pine);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding-top:14px; padding-bottom:14px; }
+  .brand{ font-family:'Fraunces', serif; font-weight:600; font-size:1.15rem; color:var(--pine-deep); text-decoration:none; }
+  .navlinks{ display:flex; gap:28px; list-style:none; margin:0; padding:0; }
+  .navlinks a{ text-decoration:none; font-size:.85rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft); }
+  .navlinks a:hover{ color:var(--amber); }
+
+  /* HERO */
+  .hero{ padding:72px 0 56px; }
+  .frame-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.78rem; color:var(--pine); border:1.5px solid var(--pine);
+    padding:4px 10px; border-radius:2px; margin-bottom:28px;
+    background:var(--card);
+  }
+  .frame-tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--amber); }
+
+  .hero-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:820px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .hero h1{ font-size:clamp(2.3rem, 5vw, 3.6rem); line-height:1.05; font-weight:600; }
+  .hero h1 em{ font-style:italic; color:var(--amber); font-weight:500; }
+  .hero p.sub{ margin-top:20px; font-size:1.08rem; color:var(--ink-soft); max-width:46ch; }
+
+  .cta-row{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; font-size:.85rem; font-weight:600; letter-spacing:.03em;
+    text-decoration:none; text-transform:uppercase; border-radius:2px;
+    border:2px solid var(--pine); transition:transform .15s ease;
+  }
+  .btn:hover{ transform:translate(-2px,-2px); }
+  .btn-solid{ background:var(--pine); color:var(--paper); box-shadow:var(--frame-shadow); }
+  .btn-solid:hover{ box-shadow:6px 6px 0 var(--pine); }
+  .btn-outline{ background:transparent; color:var(--pine); }
+
+  /* Storyboard frame card used in hero preview */
+  .sb-card{
+    background:var(--card); border:2px solid var(--pine); border-radius:3px;
+    box-shadow:var(--frame-shadow); overflow:hidden;
+  }
+  .sb-head{
+    display:flex; justify-content:space-between; align-items:center;
+    background:var(--pine); color:var(--paper); padding:8px 14px; font-size:.75rem;
+  }
+  .sb-visual{
+    aspect-ratio: 16/10; background:
+      repeating-linear-gradient(45deg, #DCE5E0, #DCE5E0 10px, #E7EEEA 10px, #E7EEEA 20px);
+    display:flex; align-items:center; justify-content:center; color:var(--slate); font-size:.8rem;
+    border-bottom:1.5px dashed var(--line);
+  }
+  .sb-notes{ padding:14px; font-size:.82rem; color:var(--ink-soft); }
+  .sb-notes .label{ color:var(--amber); font-weight:600; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+
+  /* SECTION HEADERS */
+  .section{ padding:64px 0; border-top:1.5px dashed var(--line); }
+  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:36px; flex-wrap:wrap; }
+  .section-head .num{ font-size:.85rem; color:var(--amber); font-weight:600; }
+  .section-head h2{ font-size:clamp(1.6rem,3vw,2.2rem); font-weight:600; }
+  .section-head .rule{ flex:1; min-width:40px; height:1.5px; background:var(--line); }
+
+  /* ABOUT */
+  .about-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:48px; }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-grid p{ color:var(--ink-soft); font-size:1.02rem; }
+  .toolkit{ display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:.78rem;
+    border:1.5px solid var(--pine); color:var(--pine);
+    padding:5px 10px; border-radius:2px; background:var(--card);
+  }
+
+  /* PORTFOLIO GRID */
+  .filter-row{ display:flex; gap:10px; margin-bottom:28px; flex-wrap:wrap; }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace; font-size:.78rem;
+    padding:7px 14px; border-radius:2px; border:1.5px solid var(--pine);
+    background:transparent; color:var(--pine); cursor:pointer;
+  }
+  .filter-btn.active{ background:var(--pine); color:var(--paper); }
+
+  .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
+  @media (max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:620px){ .grid{ grid-template-columns:1fr; } }
+
+  .proj-card{
+    background:var(--card); border:2px solid var(--pine); border-radius:3px;
+    box-shadow:4px 4px 0 var(--line); cursor:pointer; transition:box-shadow .15s ease, transform .15s ease;
+    display:flex; flex-direction:column;
+  }
+  .proj-card:hover{ box-shadow:4px 4px 0 var(--amber); transform:translate(-2px,-2px); }
+  .proj-thumb{
+    aspect-ratio:16/10; display:flex; align-items:center; justify-content:center;
+    font-size:.78rem; color:var(--slate); border-bottom:1.5px dashed var(--line);
+    background:repeating-linear-gradient(135deg, #E3E9E5, #E3E9E5 12px, #ECF1EE 12px, #ECF1EE 24px);
+  }
+  .proj-body{ padding:16px; flex:1; display:flex; flex-direction:column; gap:8px;}
+  .proj-kicker{ font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--amber); font-weight:600; }
+  .proj-title{ font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600; color:var(--pine-deep); }
+  .proj-desc{ font-size:.88rem; color:var(--ink-soft); }
+  .proj-tags{ display:flex; gap:6px; flex-wrap:wrap; margin-top:4px; }
+  .tag{ font-size:.68rem; font-family:'IBM Plex Mono', monospace; color:var(--slate); border:1px solid var(--line); padding:2px 6px; border-radius:2px; }
+
+  .cat{ display:none; }
+  .cat.show{ display:grid; }
+
+  /* CASE STUDIES */
+  .case{
+    background:var(--card); border:2px solid var(--pine); border-radius:4px;
+    padding:32px; margin-bottom:28px; box-shadow:6px 6px 0 var(--line);
+  }
+  .case-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:18px;}
+  .case-top h3{ font-size:1.5rem; }
+  .case-meta{ font-size:.75rem; color:var(--slate); font-family:'IBM Plex Mono', monospace; }
+  .case-cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:20px; }
+  @media (max-width:760px){ .case-cols{ grid-template-columns:1fr; } }
+  .case-col .label{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--amber); font-weight:600; margin-bottom:6px; display:block;}
+  .case-col p{ font-size:.9rem; color:var(--ink-soft); margin:0; }
+  .case-stats{ display:flex; gap:22px; margin-top:22px; flex-wrap:wrap; border-top:1.5px dashed var(--line); padding-top:18px;}
+  .stat{ }
+  .stat .n{ font-family:'Fraunces', serif; font-size:1.6rem; font-weight:600; color:var(--pine-deep); }
+  .stat .l{ font-size:.72rem; color:var(--slate); text-transform:uppercase; letter-spacing:.05em; }
+
+  /* CONTACT */
+  .contact{ background:var(--pine); color:var(--paper); border-radius:4px; padding:52px 40px; text-align:center; }
+  .contact h2{ color:var(--paper); font-size:clamp(1.8rem,4vw,2.6rem); }
+  .contact p{ color:var(--amber-soft); margin-top:12px; font-size:1rem; }
+  .contact .cta-row{ justify-content:center; margin-top:28px; }
+  .contact .btn-solid{ background:var(--amber); border-color:var(--amber); color:var(--pine-deep); box-shadow:4px 4px 0 var(--paper); }
+  .contact .btn-outline{ border-color:var(--paper); color:var(--paper); }
+
+  footer{ text-align:center; padding:28px; font-size:.78rem; color:var(--slate); }
+
+  /* Modal */
+  .modal-bg{
+    display:none; position:fixed; inset:0; background:rgba(21,44,37,0.55);
+    z-index:100; align-items:center; justify-content:center; padding:24px;
+  }
+  .modal-bg.open{ display:flex; }
+  .modal{
+    background:var(--paper); border:2px solid var(--pine); border-radius:4px;
+    max-width:640px; width:100%; max-height:85vh; overflow-y:auto;
+    box-shadow:8px 8px 0 var(--amber);
+  }
+  .modal-head{ display:flex; justify-content:space-between; align-items:center; background:var(--pine); color:var(--paper); padding:14px 20px; }
+  .modal-close{ background:none; border:none; color:var(--paper); font-size:1.4rem; cursor:pointer; line-height:1; }
+  .modal-body{ padding:24px; }
+  .modal-body .sb-visual{ margin-bottom:16px; border-radius:2px; border:1.5px solid var(--line); }
+  .modal-body h3{ font-size:1.3rem; margin-bottom:6px; }
+  .modal-body .proj-tags{ margin-bottom:14px; }
+  .modal-body p{ color:var(--ink-soft); font-size:.92rem; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body class="graph">
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">Elizabeth Moore</a>
+    <ul class="navlinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="frame-tag mono"><span class="dot"></span> FRAME 00 — INTRO</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Instructional design that gets <em>watched</em>, not just <em>assigned</em>.</h1>
+        <p class="sub">I'm Elizabeth Moore, a freelance instructional designer and eLearning developer. I build onboarding programs, compliance training, and branching scenarios that people actually finish — for contract engagements from a few weeks to a full program build.</p>
+        <div class="cta-row">
+          <a href="#work" class="btn btn-solid">View the work</a>
+          <a href="#contact" class="btn btn-outline">Start a project</a>
+        </div>
+      </div>
+      <div class="sb-card">
+        <div class="sb-head mono">
+          <span>FRAME 01</span>
+          <span>SCENE: ONBOARDING</span>
+        </div>
+        <div class="sb-visual"><img src="images/hero-onboarding.png" alt="Onboarding module screen preview" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="sb-notes">
+          <span class="label mono">VO —</span>
+          <p style="margin:4px 0 10px;">"Welcome to your first week. Let's get you set up."</p>
+          <span class="label mono">On-screen —</span>
+          <p style="margin:4px 0 0;">Progress tracker, click-to-reveal checklist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num mono">FRAME 02</span>
+      <h2>About</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I've spent 10+ years designing learning experiences for fintech organizations. My work sits at the intersection of instructional theory and production craft: I storyboard like a writer, build like a developer, and test like a QA analyst before anything ships to a client's LMS.</p>
+        <p style="margin-top:14px;">Currently taking on short-term and project-based contracts — 4 to 16 weeks is my sweet spot, though I've run longer engagements when the scope calls for it.</p>
+      </div>
+      <div>
+        <span class="proj-kicker">Toolkit</span>
+        <div class="toolkit">
+          <span class="chip">Articulate Rise 360</span>
+          <span class="chip">Storyline 360</span>
+          <span class="chip">Synthesia</span>
+          <span class="chip">Camtasia</span>
+          <span class="chip">SnagIt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num mono">FRAME 03</span>
+      <h2>Use cases</h2>
+      <div class="rule"></div>
+    </div>
+    <p style="color:var(--slate); font-size:.92rem; margin:-20px 0 32px; max-width:60ch;">
+      Every company — regardless of size — has a compliance need to teach employees how to secure their credentials. These pieces were built to train any internal corporate audience on KeePass, a free, encryption-based password manager, from first install through daily habits.
+    </p>
+
+    <div class="grid" style="display:grid;">
+      <div class="proj-card" onclick="openModal('el1')">
+        <div class="proj-thumb"><img src="images/keepass-full-course.png" alt="KeePass: Work Smarter, Stay Secure course preview" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="proj-body">
+          <span class="proj-kicker">eLearning Module</span>
+          <div class="proj-title">KeePass: Work Smarter, Stay Secure</div>
+          <div class="proj-desc">Full self-paced compliance course teaching employees to install, set up, and responsibly use KeePass — including a branching scenario knowledge check built from real workplace moments.</div>
+          <div class="proj-tags"><span class="tag">Rise 360</span><span class="tag">Branching scenario</span><span class="tag">5–7 min</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal('el2')">
+        <div class="proj-thumb"><img src="images/autotype-microlearning.png" alt="Auto-Type microlearning screen preview" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="proj-body">
+          <span class="proj-kicker">eLearning Module</span>
+          <div class="proj-title">Auto-Type: Stop Copying Your Password</div>
+          <div class="proj-desc">Companion microlearning isolating one high-value habit — using KeePass's Auto-Type shortcut instead of copy-pasting credentials — in a tight 2-minute, single-concept build.</div>
+          <div class="proj-tags"><span class="tag">Rise 360</span><span class="tag">Single-concept</span><span class="tag">2 min</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal('sb1')">
+        <div class="proj-thumb"><img src="images/autotype-storyboard.png" alt="Auto-Type storyboard document preview" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="proj-body">
+          <span class="proj-kicker">Storyboard</span>
+          <div class="proj-title">Auto-Type Microlearning Storyboard</div>
+          <div class="proj-desc">Screen-by-screen storyboard mapping visuals, VO, and interaction logic for the Auto-Type piece — with build-discipline notes to keep the scope deliberately "micro."</div>
+          <div class="proj-tags"><span class="tag">Rise 360</span><span class="tag">Pre-production</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="case-studies">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num mono">FRAME 04</span>
+      <h2>Case studies</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <h3>Building Worldpay University from the Ground Up</h3>
+        <span class="case-meta">CLIENT: Worldpay · Sr. Payments Learning Specialist</span>
+      </div>
+      <div class="case-cols">
+        <div class="case-col">
+          <span class="label mono">Challenge</span>
+          <p>Partner and internal enablement was fragmented, with no centralized model to onboard and certify payment partners at scale.</p>
+        </div>
+        <div class="case-col">
+          <span class="label mono">Approach</span>
+          <p>Designed, developed, and rolled out Worldpay University as a centralized enablement model, folding it into Day 1 onboarding for internal and partner audiences alike.</p>
+        </div>
+        <div class="case-col">
+          <span class="label mono">Result</span>
+          <p>Now supports partner ecosystems including the Covetrus Integrated Payments platform, serving veterinary clinics nationwide, with certifications tracked across the full partner network.</p>
+        </div>
+      </div>
+      <div class="case-stats">
+        <div class="stat"><div class="n">249+</div><div class="l">Partners supported</div></div>
+        <div class="stat"><div class="n">1,100+</div><div class="l">Active users</div></div>
+        <div class="stat"><div class="n">226+</div><div class="l">Certifications live</div></div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <h3>Compressing a 6-Month Build into 6 Weeks</h3>
+        <span class="case-meta">CLIENT: Worldpay · Payrix Dashboard Demonstration</span>
+      </div>
+      <div class="case-cols">
+        <div class="case-col">
+          <span class="label mono">Challenge</span>
+          <p>The Payrix dashboard demonstration was originally scoped at six months, tying up the team and delaying other priority projects.</p>
+        </div>
+        <div class="case-col">
+          <span class="label mono">Approach</span>
+          <p>Led the instructional systems design process, splitting the demo into two parts and building both in parallel instead of sequentially.</p>
+        </div>
+        <div class="case-col">
+          <span class="label mono">Result</span>
+          <p>Cut delivery time from six months to six weeks, freeing the team's capacity for additional projects without sacrificing quality.</p>
+        </div>
+      </div>
+      <div class="case-stats">
+        <div class="stat"><div class="n">6 wks</div><div class="l">Delivered (was 6 mo)</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">Parts built in parallel</div></div>
+        <div class="stat"><div class="n">~75%</div><div class="l">Timeline reduction</div></div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <h3>A Self-Service Training Catalog for Partner Bank Sales Teams</h3>
+        <span class="case-meta">CLIENT: Fiserv · FI Sales Training Manager</span>
+      </div>
+      <div class="case-cols">
+        <div class="case-col">
+          <span class="label mono">Challenge</span>
+          <p>Partner bank sales teams across KeyBank, TD, Zions affiliates, and Hancock Whitney had no self-service reference, driving a steady stream of repeat training requests.</p>
+        </div>
+        <div class="case-col">
+          <span class="label mono">Approach</span>
+          <p>Repurposed recorded commercialization calls into a bite-sized, self-paced product training catalog available 24/7 ahead of merchant conversations.</p>
+        </div>
+        <div class="case-col">
+          <span class="label mono">Result</span>
+          <p>Monthly training request volume dropped by half as teams gained on-demand access to product answers, earning multiple internal recognitions.</p>
+        </div>
+      </div>
+      <div class="case-stats">
+        <div class="stat"><div class="n">-50%</div><div class="l">Training requests</div></div>
+        <div class="stat"><div class="n">24/7</div><div class="l">Self-service access</div></div>
+        <div class="stat"><div class="n">4+</div><div class="l">Partner banks served</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="border-top:none;">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Have a short-term build coming up?</h2>
+      <p>I'm available for contract instructional design and eLearning development work — reach out with your timeline and I'll follow up within a day.</p>
+      <div class="cta-row">
+        <a href="mailto:elizabeth.moore.works@gmail.com" class="btn btn-solid">Email elizabeth.moore.works@gmail.com</a>
+        <a href="https://www.linkedin.com/in/elizabeth-m187" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Elizabeth Moore. Built frame by frame.
+</footer>
+
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-head mono">
+      <span id="modalFrameLabel">FRAME —</span>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  // Filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.proj-card');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c=>{
+        c.style.display = (f==='all' || c.dataset.cat===f) ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // Modal content (placeholder detail per project)
+  const projectData = {
+    el1: {
+      frame:"FRAME — MODULE 01",
+      title:"KeePass: Work Smarter, Stay Secure",
+      tags:["Rise 360","Branching scenario","5–7 min"],
+      desc:"A full self-paced course built to teach any internal corporate audience how to adopt KeePass — a free, AES/ChaCha20-encrypted password manager — for company credential compliance. Covers installing from the approved company source, creating a master database, applying best practices (generate, organize, lock), and finding support resources. Closes with an applied knowledge check built from three real workplace moments — the coffee break, the forgotten password, and the daily login — each branching to consequence-based feedback rather than a simple right/wrong."
+    },
+    el2: {
+      frame:"FRAME — MODULE 02",
+      title:"Auto-Type: Stop Copying Your Password",
+      tags:["Rise 360","Single-concept","2 min"],
+      desc:"A companion microlearning piece to the full KeePass course, built around a single objective: use KeePass's Auto-Type shortcut (Ctrl+Alt+A) to log in without copying or pasting a password. Deliberately kept flat and short — one continuous flow, one knowledge check, no branching or video — to prove that a single high-value habit can stand on its own as a 2-minute reinforcement piece without duplicating the parent course."
+    },
+    sb1: {
+      frame:"FRAME — STORYBOARD 01",
+      title:"Auto-Type Microlearning Storyboard",
+      tags:["Rise 360","Pre-production","5 screens"],
+      desc:"The screen-by-screen storyboard behind the Auto-Type piece, documenting on-screen content, design/interaction notes, and shared design-system elements (header color, callout style, button treatment) inherited from the companion course. Includes explicit build-discipline notes — one objective stated once, one knowledge check, no second example — to keep the finished piece genuinely 'micro' rather than a scaled-down version of the full course."
+    }
+  };
+
+  function openModal(id){
+    const d = projectData[id];
+    document.getElementById('modalFrameLabel').textContent = d.frame;
+    document.getElementById('modalBody').innerHTML = `
+      <h3>${d.title}</h3>
+      <div class="proj-tags">${d.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <p>${d.desc}</p>
+    `;
+    document.getElementById('modalBg').classList.add('open');
+  }
+  function closeModal(e){
+    document.getElementById('modalBg').classList.remove('open');
+  }
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>
