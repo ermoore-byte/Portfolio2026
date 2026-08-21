@@ -475,7 +475,8 @@
       frame:"FRAME — STORYBOARD 01",
       title:"Auto-Type Microlearning Storyboard",
       tags:["Rise 360","Pre-production","5 screens"],
-      desc:"The screen-by-screen storyboard behind the Auto-Type piece, documenting on-screen content, design/interaction notes, and shared design-system elements (header color, callout style, button treatment) inherited from the companion course. Includes explicit build-discipline notes — one objective stated once, one knowledge check, no second example — to keep the finished piece genuinely 'micro' rather than a scaled-down version of the full course."
+      desc:"The screen-by-screen storyboard behind the Auto-Type piece, documenting on-screen content, design/interaction notes, and shared design-system elements (header color, callout style, button treatment) inherited from the companion course. Includes explicit build-discipline notes — one objective stated once, one knowledge check, no second example — to keep the finished piece genuinely 'micro' rather than a scaled-down version of the full course.",
+      link:"documents/AutoType_Microlearning_Storyboard.pdf"
     }
   };
 
@@ -486,7 +487,7 @@
       <h3>${d.title}</h3>
       <div class="proj-tags">${d.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
       <p>${d.desc}</p>
-      ${d.link ? `<a href="${d.link}" target="_blank" rel="noopener" class="btn btn-solid" style="margin-top:14px;display:inline-block;">Launch module ↗</a>` : ''}
+      ${d.link ? `<a href="${d.link}" target="_blank" rel="noopener" class="btn btn-solid" style="margin-top:14px;display:inline-block;">${d.link.endsWith('.pdf') ? 'View document ↗' : 'Launch module ↗'}</a>` : ''}
     `;
     document.getElementById('modalBg').classList.add('open');
   }
