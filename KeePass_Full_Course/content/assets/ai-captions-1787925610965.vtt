@@ -1,0 +1,205 @@
+WEBVTT
+
+0
+00:00:03.619 --> 00:00:06.670
+In this video we'll set up your first keypass database,
+
+1
+00:00:06.909 --> 00:00:10.350
+the tool that you'll use to store every company password
+
+2
+00:00:10.590 --> 00:00:11.770
+from today forward.
+
+3
+00:00:13.260 --> 00:00:15.649
+Now that you've already installed Keypass,
+
+4
+00:00:15.699 --> 00:00:17.299
+when it opens for the first time,
+
+5
+00:00:17.379 --> 00:00:21.739
+you're going to land on a welcome screen with no database yet like you see here.
+
+6
+00:00:21.989 --> 00:00:23.120
+That's expected.
+
+7
+00:00:23.549 --> 00:00:25.639
+We're going to create one from scratch.
+
+8
+00:00:27.319 --> 00:00:29.350
+We'll do that by going to file
+
+9
+00:00:29.530 --> 00:00:30.899
+the new database.
+
+10
+00:00:31.719 --> 00:00:34.349
+When the save dialog box pops up,
+
+11
+00:00:34.729 --> 00:00:39.830
+this is the single most important step in the whole video where you save this file.
+
+12
+00:00:40.970 --> 00:00:44.520
+Save your database to your company managed local drive
+
+13
+00:00:44.810 --> 00:00:45.360
+or
+
+14
+00:00:45.500 --> 00:00:48.279
+the IT approved corporate storage folder
+
+15
+00:00:48.500 --> 00:00:51.319
+if you'll need it in more than one device.
+
+16
+00:00:52.259 --> 00:00:54.639
+Never save it to a personal Dropbox,
+
+17
+00:00:55.180 --> 00:00:56.119
+Google Drive,
+
+18
+00:00:56.419 --> 00:00:57.220
+iCloud,
+
+19
+00:00:57.419 --> 00:00:58.779
+or personal email.
+
+20
+00:00:59.220 --> 00:01:01.959
+That's a policy violation and puts every one
+
+21
+00:01:02.419 --> 00:01:04.599
+of your company passwords at risk.
+
+22
+00:01:06.800 --> 00:01:11.660
+Give it a clear name so I can identify it if you ever need support.
+
+23
+00:01:12.319 --> 00:01:15.379
+Try your name and company works well.
+
+24
+00:01:16.040 --> 00:01:16.980
+Click save.
+
+25
+00:01:18.639 --> 00:01:20.580
+Now you'll set your master password.
+
+26
+00:01:21.830 --> 00:01:22.690
+This is
+
+27
+00:01:22.870 --> 00:01:25.459
+the one password that protects all the others,
+
+28
+00:01:25.879 --> 00:01:27.209
+so it has to be strong.
+
+29
+00:01:28.080 --> 00:01:30.400
+Make sure it's at least 16 characters,
+
+30
+00:01:30.680 --> 00:01:32.279
+a mix of uppercase,
+
+31
+00:01:32.480 --> 00:01:33.379
+lowercase,
+
+32
+00:01:33.750 --> 00:01:35.500
+numbers and symbols,
+
+33
+00:01:35.720 --> 00:01:39.319
+and no dictionary words or anything tied to your personally.
+
+34
+00:01:40.730 --> 00:01:41.550
+No birthdays,
+
+35
+00:01:41.650 --> 00:01:42.360
+pet names,
+
+36
+00:01:42.449 --> 00:01:44.599
+or reused passwords from other accounts,
+
+37
+00:01:44.730 --> 00:01:45.190
+please.
+
+38
+00:01:46.559 --> 00:01:47.629
+A passphrase,
+
+39
+00:01:47.690 --> 00:01:53.389
+4 or 5 random unrelated words strung together is actually easier to remember
+
+40
+00:01:53.650 --> 00:01:54.949
+and just as strong.
+
+41
+00:01:57.019 --> 00:01:57.540
+From here,
+
+42
+00:01:57.569 --> 00:02:00.239
+click OK and your database is created.
+
+43
+00:02:00.819 --> 00:02:02.980
+You'll see now an empty list.
+
+44
+00:02:03.139 --> 00:02:04.080
+That's normal.
+
+45
+00:02:06.080 --> 00:02:06.669
+Right now,
+
+46
+00:02:06.800 --> 00:02:09.258
+this is just a locked empty vault.
+
+47
+00:02:10.548 --> 00:02:13.548
+In the next video you'll learn how to add your entries,
+
+48
+00:02:13.828 --> 00:02:15.628
+use your entries with autotype,
+
+49
+00:02:15.828 --> 00:02:16.789
+and even more.
+
+50
+00:02:17.108 --> 00:02:18.029
+Thank you for joining.
